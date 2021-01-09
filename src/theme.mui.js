@@ -19,6 +19,11 @@ const theme = createMuiTheme({
       xl: 1920,
     },
   },
+  palette: {
+    primary: {
+      main: '#343A40',
+    },
+  },
 });
 
 export default theme;
