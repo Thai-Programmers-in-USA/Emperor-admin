@@ -1,16 +1,19 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-import ButtonDark from '../components/button-dark.component';
+import Button from '../components/button-custom.component';
 
 function CustomElement(props) {
   return (
     <Container>
       <Typography variant='h1'>Custom elements</Typography>
-      <h2>button-dark</h2>
-      <ButtonDark values={{ transform: 'capitalize', bold: true }}>
+      <Typography variant='h2'>button-custom</Typography>
+      <p></p>
+      <Button
+        values={{ color: 'secondary', transform: 'capitalize', bold: true }}
+      >
         LOg IN
-      </ButtonDark>
+      </Button>
     </Container>
   );
 }

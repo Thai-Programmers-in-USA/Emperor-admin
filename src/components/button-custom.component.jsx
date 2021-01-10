@@ -7,10 +7,7 @@ const CustomBtn = withStyles((theme) => {
     root: {
       height: '40px',
       borderRadius: '40px',
-      width: '280px',
-      [theme.breakpoints.up('lg')]: {
-        width: 'size',
-      },
+      width: '100%',
     },
     label: ({ transform, bold }) => ({
       textTransform: `${transform}`,
@@ -19,16 +16,16 @@ const CustomBtn = withStyles((theme) => {
   };
 })(Button);
 
-function ButtonDark({
+function btn({
   children,
-  values: { transform = 'uppercase', bold = false },
+  values: { color = 'primary', transform = 'uppercase', bold = false },
 }) {
   console.log(transform);
   return (
     <Fragment>
       <CustomBtn
         variant='contained'
-        color='primary'
+        color={color}
         transform={transform}
         bold={bold ? 1 : 0}
       >
@@ -38,4 +35,4 @@ function ButtonDark({
   );
 }
 
-export default ButtonDark;
+export default btn;
