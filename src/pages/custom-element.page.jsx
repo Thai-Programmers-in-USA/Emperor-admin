@@ -1,13 +1,17 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
 import ButtonDark from '../components/button-dark.component';
 
 function CustomElement(props) {
   return (
-    <Fragment>
-      <h1>Custom elements</h1>
+    <Container>
+      <Typography variant='h1'>Custom elements</Typography>
       <h2>button-dark</h2>
-      <ButtonDark>LOG IN</ButtonDark>
-    </Fragment>
+      <ButtonDark values={{ transform: 'capitalize', bold: true }}>
+        LOg IN
+      </ButtonDark>
+    </Container>
   );
 }
 

@@ -1,26 +1,39 @@
 import React, { Fragment } from 'react';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
-  button: {
-    height: '40px',
-    borderRadius: '40px',
-    width: '280px',
-    [theme.breakpoints.up('lg')]: {
-      width: '360px',
+const CustomBtn = withStyles((theme) => {
+  return {
+    root: {
+      height: '40px',
+      borderRadius: '40px',
+      width: '280px',
+      [theme.breakpoints.up('lg')]: {
+        width: 'size',
+      },
     },
-  },
-}));
+    label: ({ transform, bold }) => ({
+      textTransform: `${transform}`,
+      fontWeight: `${bold ? 'bold' : 'normal'}`,
+    }),
+  };
+})(Button);
 
-function ButtonDark({ children }) {
-  const classes = useStyles();
+function ButtonDark({
+  children,
+  values: { transform = 'uppercase', bold = false },
+}) {
+  console.log(transform);
   return (
     <Fragment>
-      <Button variant='contained' color='primary' className={classes.button}>
-        <Typography>{children}</Typography>
-      </Button>
+      <CustomBtn
+        variant='contained'
+        color='primary'
+        transform={transform}
+        bold={bold ? 1 : 0}
+      >
+        {children.toLowerCase()}
+      </CustomBtn>
     </Fragment>
   );
 }
